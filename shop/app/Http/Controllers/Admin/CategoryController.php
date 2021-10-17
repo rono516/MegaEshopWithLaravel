@@ -34,9 +34,13 @@ class CategoryController extends Controller
         $category->popular = $request->input('popular')== TRUE?'1':'0' ;
         $category->meta_title = $request->input('meta_title');
         $category->meta_keywords = $request->input('meta_keywords');
-        $category->meta_decrip = $request->input('meta_decription');
+        $category->meta_decrip = $request->input('meta_description');
 
         $category->save();
         return redirect('/dashboard')->with('status',"Category Added Successfully");
+    }
+    function edit($id){
+        $category = Category::find($id);
+        return view('admin.category.edit', compact('category'));
     }
 }
