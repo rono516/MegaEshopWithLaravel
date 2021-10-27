@@ -6,8 +6,9 @@
      </div>
         <div class="card-body">
             <form action=" {{ url('update-category/'.$category->id) }}" method="POST" enctype="multipart/form-data">
+                @method('PUT')
                 @csrf
-                @method="PUT"
+                
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="">Name</label>
@@ -42,9 +43,10 @@
                         <textarea  name="meta_description" rows="3" class="form-control"> {{ $category->meta_descrip}} </textarea>
                     </div>
 
-                    @if(  {{$category->image}} )
+                    @if(  $category->image )
                        <img src="{{ asset('assets/uploads/category/'.$category->image)}}" alt="Category image">
-                    <div class="col-mid-12">
+                    @endif
+                       <div class="col-mid-12">
                         <input type="file" name="image" class="form-control">
                     </div>
                     <div class="col-md-12">
