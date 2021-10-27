@@ -18,11 +18,39 @@
                 
                       <div class="item">
                          <div class="card">
-                            <img src="{{ asset('assets/uploads/products/'.$prod->image ) }}" alt="Product image">
+                            <img src="{{ asset('assets/uploads/products/'.$prod->image ) }}" width="500" height="250" alt="Product image">
                             <div class="card-body">
                                 <h5>{{ $prod->name }}</h5>
                                 <span class="float-start">{{ $prod->selling_price }}</span>
                                 <span class="float-end"> <s> {{ $prod->original_price }} </s></span>
+                            </div>
+                         </div>
+                      </div>
+                    @endforeach
+
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <h2>Trending Categories</h2>
+                <div class="owl-carousel featured-carousel owl-theme">
+                    
+                    @foreach ($trending_category as $tcategory)
+                    
+                
+                      <div class="item">
+                         <div class="card">
+                            <img src="{{ asset('assets/uploads/category/'.$tcategory->image ) }}" width="500" height="300" alt="Product image">
+                            <div class="card-body">
+                                <h5>{{ $tcategory->name }}</h5>
+                                <p>
+                                    {{ $tcategory->meta_decrip }}
+                                </p>
                             </div>
                          </div>
                       </div>
