@@ -44,8 +44,9 @@
                     
                 
                       <div class="item">
+                          <a href="{{ url('view-category/'.$tcategory->slug)}}">
                          <div class="card">
-                            <img src="{{ asset('assets/uploads/category/'.$tcategory->image ) }}" width="500" height="300" alt="Product image">
+                            <img src="{{ asset('assets/uploads/category/'.$tcategory->image ) }}"  width="500" height="300" alt="Product image">
                             <div class="card-body">
                                 <h5>{{ $tcategory->name }}</h5>
                                 <p>
@@ -53,6 +54,7 @@
                                 </p>
                             </div>
                          </div>
+                        </a>
                       </div>
                     @endforeach
 
