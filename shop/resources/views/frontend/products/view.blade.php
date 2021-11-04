@@ -20,8 +20,10 @@
            <div class="col-md-8">
                <h2 class="mb-2">
                    {{ $products->name }}
+                   @if ($products->trending == "1")                       
+                   
                    <label style="font-size:16px;" class="float-end badge bg-danger trending_tag">Trending</label>
-
+                   @endif
                </h2>
                <hr>
                <label class="mb-3">Original Price: <s>Ksh.{{ $products->original_price}}</s></label>
