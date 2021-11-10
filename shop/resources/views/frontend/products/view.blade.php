@@ -85,7 +85,7 @@
                 'product_qty': product_qty,
             },
             success: function (response) {
-                swal (response.status);
+                alert (response.status);
                 
             }
         });
