@@ -13,6 +13,7 @@ use App\Models\Product;
 class CartController extends Controller
 {
     public function addProduct(Request $request)
+
     {
         $product_id = $request->input('product_id');
         $product_qty = $request-> input('product_qty'); 
@@ -42,4 +43,12 @@ class CartController extends Controller
         }
     
      }
+
+   public function viewcart()
+   {
+       $cartItems = Cart::where('user_id', Auth::id())->get();
+       return view('frontend.cart', compact('cartItems'));
+   } 
+
+
 }
