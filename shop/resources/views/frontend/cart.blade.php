@@ -18,12 +18,12 @@
     </div>
 </div>
         <div class="container my-5">
-            <div class="card shadow product_data">
+            <div class="card shadow">
                 <div class="card-body">
                     @foreach ($cartItems as $item)
                         
                     
-                    <div class="row">
+                    <div class="row product_data">
                         <div class="col-md-2">
                             <img src="{{ asset('assets/uploads/products/'.$item->products->image) }}" height="70px" width="70px" alt="Image here">
                         </div>
