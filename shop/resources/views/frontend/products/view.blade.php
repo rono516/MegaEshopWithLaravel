@@ -52,7 +52,7 @@
                        <label for="Quantity">Quantity</label>
                        <div class="input-group text-center mb-3" >
                            <button class="input-group-text decrement-btn">-</button>
-                           <input type="text" name="quantity" class="form-control qty-input text-center" value="{{ $item->prod_qty }}" >
+                           <input type="text" name="quantity" class="form-control qty-input text-center" value="{{ $products->prod_qty }}" >
                            <button class="input-group-text increment-btn">+</button>
                        </div>
                    </div>

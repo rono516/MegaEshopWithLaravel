@@ -54,17 +54,29 @@
                     <div class="card-body">
                         <h6>Order Details</h6>
                         <hr>
-                        <table class="table">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 @foreach ($cartItems as $item)
-                                <tr>                                   
-                                  {{ $item->products->name }}
-
+                                <tr>       
+                                    <td>{{ $item->products->name }}</td>     
+                                    <td>{{ $item->prod_qty }}</td>   
+                                    <td>{{ $item->products->selling_price }}</td>                          
+                                  
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
+                        <hr>
+                        <button class="btn btn-primary float-end">Place Order</button>
                         
-                        @endforeach
+                        
 
                     </div>
                 </div>
