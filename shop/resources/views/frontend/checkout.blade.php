@@ -10,7 +10,7 @@
             <div class="col-md-7">
                 <div class="card">
                     <div class="card-body">
-                        <h6>Details</h6>
+                        <h6>Please provide your shipping details</h6>
                         <hr>
                         <div class="row checkout-form">
                             <div class="col-md-6">
