@@ -2,7 +2,7 @@
 @section('content')
  <div class="card">
         <div class="card-body">
-            <h1>Rono Coder</h1>
+            <h3>Welcome to Amin Dashboard</h3>
         </div>
      </div>    
 @endsection
