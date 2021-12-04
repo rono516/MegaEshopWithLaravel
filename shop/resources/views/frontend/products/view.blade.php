@@ -59,7 +59,6 @@
                    <div class="col-md-10">
                        <br>
                        @if ($products->qty> 0)
-                           <label class="badge bg-success">In stock</label>
                            <button type="button" class="btn  btn-primary mb-3 addToCartBtn float-start btn-sm">Add to Cart <i class="fa fa-shopping-cart"></i></button>
                            @endif                       
                        

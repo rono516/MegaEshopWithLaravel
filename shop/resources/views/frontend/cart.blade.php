@@ -51,6 +51,8 @@
                                 @php
                                   $total +=  $item->products->selling_price*$item->prod_qty
                                  @endphp
+                            @else
+                                 <h6>Out of Stock</h6>
                             @endif
                         </div>
                         <div class="col-md-2 my-auto">
