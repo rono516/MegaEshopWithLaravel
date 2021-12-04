@@ -58,8 +58,12 @@
                    </div>
                    <div class="col-md-10">
                        <br>
-                       <button type="button" class="btn  btn-primary mb-3 addToCartBtn float-start btn-sm">Add to Cart <i class="fa fa-shopping-cart"></i></button>
-                       <button type="button" class="btn btn-success mb-3 float-start mr-1 btn-sm" style="margin-right: 5px;">Add to Wishlist <i class="fa fa-heart"></i></button>
+                       @if ($products->qty> 0)
+                           <label class="badge bg-success">In stock</label>
+                           <button type="button" class="btn  btn-primary mb-3 addToCartBtn float-start btn-sm">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                           @endif                       
+                       
+                           <button type="button" class="btn btn-success mb-3 float-start mr-1 btn-sm" style="margin-right: 5px;">Add to Wishlist <i class="fa fa-heart"></i></button>
                        
                        
                    </div>

@@ -25,6 +25,7 @@ Route::get('/', [FrontendController::class, 'index']);
 Route::get('category', [FrontendController::class, 'category']);
 Route::get('view-category/{slug}', [FrontendController::class, 'viewcategory']);
 Route::get('view-category/{cate_slug}/{prod_meta_description}', [FrontendController::class, 'productview']);
+//Route::get('view-product', [FrontendController::class, 'productview']);
 
 Auth::routes();
 

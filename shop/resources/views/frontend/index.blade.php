@@ -17,14 +17,16 @@
                     
                 
                       <div class="item">
+                        <a href="{{ url('view-product')}}">
                          <div class="card">
                             <img src="{{ asset('assets/uploads/products/'.$prod->image ) }}" width="500" height="250" alt="Product image">
                             <div class="card-body">
                                 <h5>{{ $prod->name }}</h5>
-                                <span class="float-start">{{ $prod->selling_price }}</span>
-                                <span class="float-end"> <s> {{ $prod->original_price }} </s></span>
+                                <span class="float-start">Ksh.{{ $prod->selling_price }}</span>
+                                <span class="float-end"> <s>Was Ksh. {{ $prod->original_price }} </s></span>
                             </div>
                          </div>
+                        </a>
                       </div>
                     @endforeach
 
