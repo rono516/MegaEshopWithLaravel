@@ -24,6 +24,6 @@ class CheckoutController extends Controller
             $cartItems = Cart::where('user_id', Auth::id())->get();
 
 
-            return view('frontend.checkout', compact('cartItems')); 
+            return view('frontend.checkout', compact('cartItems'));
         }
 }
