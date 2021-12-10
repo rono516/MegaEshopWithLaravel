@@ -67,11 +67,11 @@
     </div>
 
 
-    <div id = "container">
+    
 
-    <div class="container-fluid" id=left >
+    <div class=" container container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6" id="left">
                 <div class="footer-widget">
                     <h2>Get in Touch</h2>
                     <div class="contact-info">
@@ -81,10 +81,11 @@
                     </div>
                 </div>
             </div>
+        
             
             
 
-            <div class="col-lg-3 col-md-6" id="center">
+            <div class="col-lg-4 col-md-6" id="center">
                 <div class="footer-widget">
                     <h2>Company Info</h2>
                     <ul>
@@ -95,7 +96,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6" id="right" >
+            <div class="col-lg-4 col-md-6" id="right" >
                 <div class="footer-widget">
                     <h2>Purchase Info</h2>
                     <ul>
@@ -106,6 +107,7 @@
                 </div>
             </div>
         </div>
+        
 
           
         
@@ -119,8 +121,19 @@
             
         </div>
     </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 copyright">
+                <p>Copyright All Rights Reserved</p>
+            </div>
 
-</div>  
+            <div class="col-md-6 template-by">
+                <p>Website by Mega E-shop</a></p>
+            </div>
+        </div>
+    </div>
+
 
 @endsection
 
