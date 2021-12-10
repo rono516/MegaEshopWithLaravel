@@ -65,6 +65,63 @@
             </div>
         </div>
     </div>
+
+
+    <div id = "container">
+
+    <div class="container-fluid" id=left >
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-info">
+                        <p><i class="fa fa-map-marker"></i>Mega E-shop</p>
+                        <p><i class="fa fa-envelope"></i>megaeshop@gmail.com</p>
+                        <p><i class="fa fa-phone"></i>+254792009556</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+            <div class="col-lg-3 col-md-6" id="center">
+                <div class="footer-widget">
+                    <h2>Company Info</h2>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Condition</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" id="right" >
+                <div class="footer-widget">
+                    <h2>Purchase Info</h2>
+                    <ul>
+                        <li><a href="#">Pyament Policy</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+          
+        
+        <div class="row payment align-items-center">
+            <div class="col-md-6">
+                <div class="payment-method">
+                    <h2>We Accept:</h2>
+                    <img src="assets/images/payment-method.png" alt="Payment Method" />
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</div>  
+
 @endsection
 
 @section('scripts')
