@@ -71,7 +71,7 @@
 
     <div class=" container container-fluid">
         <div class="row">
-            <div class="col-lg-4 col-md-6" id="left">
+            <div class="col-lg-4 col-md-3" id="left">
                 <div class="footer-widget">
                     <h2>Get in Touch</h2>
                     <div class="contact-info">
@@ -85,7 +85,7 @@
             
             
 
-            <div class="col-lg-4 col-md-6" id="center">
+            <div class="col-lg-4 col-md-3" id="center">
                 <div class="footer-widget">
                     <h2>Company Info</h2>
                     <ul>
@@ -96,7 +96,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6" id="right" >
+            <div class="col-lg-4 col-md-3" id="right" >
                 <div class="footer-widget">
                     <h2>Purchase Info</h2>
                     <ul>
@@ -106,30 +106,31 @@
                     </ul>
                 </div>
             </div>
+
         </div>
         
 
           
         
-        <div class="row payment align-items-center">
-            <div class="col-md-6">
-                <div class="payment-method">
-                    <h2>We Accept:</h2>
-                    <img src="assets/images/payment-method.png" alt="Payment Method" />
-                </div>
-            </div>
-            
-        </div>
+       
     </div>
     
     <div class="container">
         <div class="row">
-            <div class="col-md-6 copyright">
-                <p>Copyright All Rights Reserved</p>
+            <div class="col-md-4 copyright">
+                <p> </p><br>
+                <h2 style="font-weight:bold">Welcome to shop with us</h2>
             </div>
 
-            <div class="col-md-6 template-by">
-                <p>Website by Mega E-shop</a></p>
+            <div class="col-md-4 template-by payment-method">
+                <p> </p><br>
+                <h2 style="font-weight:bold">We accept: </h2>
+                <img src="assets/images/payment-method.png" alt="Payment Method" />
+            </div>
+
+            <div class="col-md-4 template-by">
+                <p> </p><br>
+                <h2 style="font-weight:bold">Website by Mega E-shop</h2>
             </div>
         </div>
     </div>
