@@ -14,6 +14,7 @@ class Product extends Model
         'name',
         'small_description',
         'description',
+        //description
         'original_price',
         'selling_price',
         'image',
@@ -30,6 +31,6 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class, 'cate_id', 'id') ;
     }
-    
+
 }
 

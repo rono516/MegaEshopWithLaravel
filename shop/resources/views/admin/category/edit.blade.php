@@ -8,7 +8,7 @@
             <form action=" {{ url('update-category/'.$category->id) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
-                
+
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="">Name</label>
@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Description</label>
-                        <textarea name="decription" rows="3" class="form-control"> {{ $category->description }} </textarea>
+                        <textarea name="decription" rows="3" class="form-control"> {{ $category->decription }} </textarea>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Status</label>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Meta Decription</label>
-                        <textarea  name="meta_description" rows="3" class="form-control"> {{ $category->meta_descrip}} </textarea>
+                        <textarea  name="meta_description" rows="3" class="form-control"> {{ $category->meta_decrip}} </textarea>
                     </div>
 
                     @if(  $category->image )
@@ -52,10 +52,10 @@
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary ">Submit</button>
                     </div>
-                    
-                    
+
+
                 </div>
             </form>
         </div>
-     </div>    
+     </div>
 @endsection

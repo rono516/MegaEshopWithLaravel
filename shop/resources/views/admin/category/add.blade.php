@@ -17,7 +17,7 @@
                         <input type="text" class="form-control" name="slug">
                     </div>
                     <div class="col-md-12 mb-3">
-                        <label for="">Description</label>
+                        <label for="decription">Description</label>
                         <textarea name="decription" rows="3" class="form-control"></textarea>
                     </div>
                     <div class="col-md-6 mb-3">
@@ -46,10 +46,10 @@
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary ">Submit</button>
                     </div>
-                    
-                    
+
+
                 </div>
             </form>
         </div>
-     </div>    
+     </div>
 @endsection

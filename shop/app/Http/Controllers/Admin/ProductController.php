@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all(); 
+        $products = Product::all();
         return view('admin.product.index', compact('products'));
     }
     public function add()
@@ -34,7 +34,9 @@ class ProductController extends Controller
         $products-> cate_id = $request-> input('cate_id');
         $products-> name = $request-> input('name');
         $products-> small_description = $request-> input('small_description');
+        //small_description
         $products-> description = $request-> input('description');
+        //description
         $products-> original_price = $request-> input('original_price');
         $products-> selling_price = $request-> input('selling_price');
         $products-> tax = $request-> input('tax');
@@ -46,7 +48,7 @@ class ProductController extends Controller
         $products-> meta_description = $request-> input('meta_description');
         $products-> save();
         return redirect('products')-> with('status',"product added successfully");
-        
+
     }
     public function edit($id)
     {
@@ -62,14 +64,14 @@ class ProductController extends Controller
             if(File::exists($path)){
                 File::delete($path);
             }
-        
+
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
             $file ->move('assets/uploads/products/',$filename);
             $products->image= $filename;
         }
-        
+
         $products-> name = $request-> input('name');
         $products-> small_description = $request-> input('small_description');
         $products-> description = $request-> input('description');
@@ -96,6 +98,6 @@ class ProductController extends Controller
             }
             $products->delete();
             return redirect('products')-> with('status',"Product deleted Successfully");
-    
+
 }
 }

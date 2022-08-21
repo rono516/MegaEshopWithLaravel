@@ -36,18 +36,18 @@
                                 <label for="">Address 1</label>
                                 <input type="text" class="form-control" value="{{ Auth::user()->address1 }}" name="address1" placeholder="Enter Address 1">
                             </div>
-                            <div class="col-md-6 mt-3">
-                                <label for="">Address 2</label>
-                                <input type="text" class="form-control" value="{{ Auth::user()->address2 }}" name="address2" placeholder="Enter Address 2">
-                            </div>
+{{--                            <div class="col-md-6 mt-3">--}}
+{{--                                <label for="">Address 2</label>--}}
+{{--                                <input type="text" class="form-control" value="{{ Auth::user()->address2 }}" name="address2" placeholder="Enter Address 2">--}}
+{{--                            </div>--}}
                             <div class="col-md-6 mt-3">
                                 <label for="">Town</label>
                                 <input type="text" class="form-control" value="{{ Auth::user()->town }}" name="town" placeholder="Enter City">
                             </div>
-                            <div class="col-md-6 mt-3">
-                                <label for="">County</label>
-                                <input type="text" class="form-control" value="{{ Auth::user()->county }}" name="county" placeholder="Enter County">
-                            </div>
+{{--                            <div class="col-md-6 mt-3">--}}
+{{--                                <label for="">County</label>--}}
+{{--                                <input type="text" class="form-control" value="{{ Auth::user()->county }}" name="county" placeholder="Enter County">--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
@@ -67,19 +67,19 @@
                             </thead>
                             <tbody>
                                 @foreach ($cartItems as $item)
-                                <tr>       
-                                    <td>{{ $item->products->name }}</td>     
-                                    <td>{{ $item->prod_qty }}</td>   
-                                    <td>{{ $item->products->selling_price }}</td>                          
-                                  
+                                <tr>
+                                    <td>{{ $item->products->name }}</td>
+                                    <td>{{ $item->prod_qty }}</td>
+                                    <td>{{ $item->products->selling_price }}</td>
+
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
                         <hr>
                         <button type="submit" class="btn btn-primary float-end">Place Order</button>
-                        
-                        
+
+
 
                     </div>
                 </div>
@@ -87,5 +87,5 @@
         </div>
         </form>
     </div>
-    
+
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.front')
+ @extends('layouts.front')
 
 @section('title', $products->name)
 
@@ -12,7 +12,7 @@
                 <a href="{{ url('view-category/'.$products->category->slug) }}">
                     {{ $products->category->name}}
                 </a>/
-                <a href="{{url('category/'.$products->category->slug.'/'.$products->meta_keywords)}}">
+                <a href="{{url('view-product',$products->id)}}">
                  {{$products->name }}
                 </a>
             </h5>
@@ -29,8 +29,8 @@
            <div class="col-md-8">
                <h2 class="mb-2">
                    {{ $products->name }}
-                   @if ($products->trending == "1")                       
-                   
+                   @if ($products->trending == "1")
+
                    <label style="font-size:16px;" class="float-end badge bg-danger trending_tag">Trending</label>
                    @endif
                </h2>
@@ -52,7 +52,7 @@
                        <label for="Quantity">Quantity</label>
                        <div class="input-group text-center mb-3" >
                            <button class="input-group-text decrement-btn">-</button>
-                           <input type="text" name="quantity" class="form-control qty-input text-center" value="{{ $products->prod_qty }}" >
+                           <input type="text" name="quantity" class="form-control qty-input text-center" placeholder="0" value="{{ $products->prod_qty }}" >
                            <button class="input-group-text increment-btn">+</button>
                        </div>
                    </div>
@@ -60,11 +60,11 @@
                        <br>
                        @if ($products->qty> 0)
                            <button type="button" class="btn  btn-primary mb-3 addToCartBtn float-start btn-sm">Add to Cart <i class="fa fa-shopping-cart"></i></button>
-                           @endif                       
-                       
+                       @endif
+
                            <button type="button" class="btn btn-success mb-3 float-start mr-1 btn-sm" style="margin-right: 5px;">Add to Wishlist <i class="fa fa-heart"></i></button>
-                       
-                       
+
+
                    </div>
                </div>
            </div>
@@ -74,4 +74,3 @@
    </div>
 
 @endsection
-

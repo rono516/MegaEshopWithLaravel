@@ -15,28 +15,31 @@
     <div class="container">
         <div class="row">
             <h2>{{ $category->name }}</h2>
-            
-                
+
+
                 @foreach ($products as $prod)
-                
-            
+
+
                   <div class="col-md-3 mb-3">
+
                      <div class="card">
-                       <a href="{{ url('view-category/'.$category->slug.'/'.$prod->meta_description) }}">
+                       <a href="{{ url('view-product/'.$prod->id) }}">
+
                         <img src="{{ asset('assets/uploads/products/'.$prod->image ) }}" width="250" height="250" alt="Product image">
                         <div class="card-body">
-                            <h5>{{ $prod->name }}</h5>
-                            <span class="float-start">{{ $prod->selling_price }}</span>
-                            <span class="float-end"> <s> {{ $prod->original_price }} </s></span>
+                            {{--<a href="{{url('view-product',$prod->id)}}"></a>---}}
+                            <h5 >{{ $prod->name }}</h5>
+                            <span class="float-start">Ksh. {{ number_format( $prod->selling_price) }}</span>
+                            <span class="float-end"> <s>Ksh.  {{number_format( $prod->original_price) }} </s></span>
                         </div>
                       </a>
                      </div>
                   </div>
                 @endforeach
 
-            
-           
+
+
         </div>
     </div>
-</div>   
+</div>
 @endsection

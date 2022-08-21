@@ -10,18 +10,49 @@
             <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('category') }}">Category</a>
+            <a class="nav-link" href="{{ url('category') }}">Categories</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('cart') }}">Cart</a>
           </li>
-          
+
+          @guest
+
+
+
           <li class="nav-item">
-            <a class="nav-link" href="{{'login'}}">Login</a>
+            <a class="nav-link" href="{{url('login')}}">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{'register'}}">Register</a>
+            <a class="nav-link" href="{{url('register')}}">Register</a>
           </li>
+          @endguest
+
+          @auth
+
+              @if(auth()->user()->role_as == '1')
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{'/dashboard'}}">Dashboard</a>
+                </li>
+
+
+                @endif
+
+
+          <li class="nav-item">
+                {{-- <a class="nav-link" href="{{'/'}}">{{auth()->user()->name}}</a> --}}
+                <a class="nav-link" href="#">{{auth()->user()->email}}</a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{'logout'}}">Logout</a>
+          </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{'orders'}}">My orders</a>
+                  </li>
+          @endauth
         </ul>
       </div>
     </div>

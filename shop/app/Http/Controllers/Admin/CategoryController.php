@@ -31,7 +31,8 @@ class CategoryController extends Controller
         }
         $category->name = $request->input('name');
         $category->slug = $request->input('slug');
-        $category->description = $request->input('description');
+        $category->decription = $request->input('decription');
+        //decription
         $category->status = $request->input('status')== TRUE?'1':'0' ;
         $category->popular = $request->input('popular')== TRUE?'1':'0' ;
         $category->meta_title = $request->input('meta_title');
@@ -39,7 +40,8 @@ class CategoryController extends Controller
         $category->meta_decrip = $request->input('meta_description');
 
         $category->save();
-        return redirect('/dashboard')->with('status',"Category Added Successfully");
+       // return redirect('/dashboard')->with('status',"Category Added Successfully");
+        return redirect()->back();
     }
     function edit($id){
         $category = Category::find($id);
@@ -62,8 +64,8 @@ class CategoryController extends Controller
         }
         $category->name = $request->input('name');
         $category->slug = $request->input('slug');
-        $category->description = $request->input('description');
-        $category->status = $request->input('status')== TRUE?'1':'0' ;
+        $category->decription = $request->input('decription');
+        $category->status = $request->input('status')== TRUE?'1':'0';
         $category->popular = $request->input('popular')== TRUE?'1':'0' ;
         $category->meta_title = $request->input('meta_title');
         $category->meta_keywords = $request->input('meta_keywords');
@@ -73,7 +75,7 @@ class CategoryController extends Controller
     }
     public function destroy($id)
     {
-        
+
        $category = Category::find($id);
        if ($category-> image)
        {
