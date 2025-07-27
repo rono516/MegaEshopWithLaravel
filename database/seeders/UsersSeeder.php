@@ -20,15 +20,5 @@ class UsersSeeder extends Seeder
         $user->password = bcrypt('1234567890');
         $user->role_as = 1;
         $user->save();
-
-
-        // $table->id();
-        //     $table->string('name');
-        //     $table->string('email')->unique();
-        //     $table->timestamp('email_verified_at')->nullable();
-        //     $table->string('password');
-        //     $table->tinyInteger('role_as')->default('0');
-        //     $table->rememberToken();
-        //     $table->timestamps();
     }
 }
