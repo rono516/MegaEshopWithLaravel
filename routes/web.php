@@ -23,8 +23,8 @@ use App\Http\Controllers\Frontend\FrontendController;
 //Route::get('/', function () {
   //  return view('welcome');
 //});
-Route::get('/', [FrontendController::class, 'index']);
-Route::get('category', [FrontendController::class, 'category']);
+Route::get('/', [FrontendController::class, 'index'])->name('home');
+Route::get('category', [FrontendController::class, 'category'])->name('categories');
 Route::get('view-category/{slug}', [FrontendController::class, 'viewcategory']);
 Route::get('view-category/{cate_slug}/{prod_meta_description}', [FrontendController::class, 'productview']);
 Route::get('view-product/{product_id}', [FrontendController::class, 'productview']);
@@ -32,11 +32,11 @@ Route::get('view-product/{product_id}', [FrontendController::class, 'productview
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('add-to-cart', [CartController::class, 'addProduct']);
 Route::post('delete-cart-item', [CartController::class, 'deleteproduct']);
 Route::post('update-cart', [CartController::class, 'updatecart']);
-Route::get('cart', [CartController::class, 'viewcart']);
+Route::get('cart', [CartController::class, 'viewcart'])->name('cart');
 
 Route::get('checkout',[CheckoutController::class, 'index']);
 
@@ -46,12 +46,12 @@ Route::middleware(['auth'])->group(function () {
     //Route::get('cart', [CartController::class, 'viewcart']  );
     //Route::get('checkout',[CheckoutController::class, 'index']);
     Route::post('place-order', [CheckoutController::class, 'placeorder']);
-    Route::get('orders', [FrontendController::class, 'my_orders']);
+    Route::get('orders', [FrontendController::class, 'my_orders'])->name('my.orders');
     Route::get('view_order/{id}', [FrontendController::class, 'view_order']);
 });
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/dashboard','Admin\FrontendController@index');
+    Route::get('/dashboard','Admin\FrontendController@index')->name('dashboard');
 
     Route::get('categories', 'Admin\CategoryController@index');
     Route::get('add-category', 'Admin\CategoryController@add');
