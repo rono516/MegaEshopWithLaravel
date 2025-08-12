@@ -1,10 +1,17 @@
 @extends('layouts.admin')
 @section('content')
- <div class="card">
-     <div class="card-header">
-        <h4>Category Page</h4>
-        <hr>
+ <div class="">
+     <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h4>Categories</h4>
+        </div>
+      
+        <div>
+            {{-- <a href="">New Category</a> --}}
+            <a href="{{ route('add.category')}}" class="btn btn-primary">New Category</a>
+        </div>
      </div>
+       <hr>
      <div class="card-body">
             <table class="table table-bordered table-striped">
                 <thead>
@@ -27,8 +34,10 @@
                            <td>
                              <img src="{{ asset('assets/uploads/category/'.$item-> image)}}" class="cate-image" alt="image here"> </td>
                            <td>
-                            <a href="{{ url('edit-category/'.$item-> id) }}" class="btn btn-primary">Edit</a>
-                            <a href="{{ url('delete-category/'.$item-> id) }}"  class="btn btn-danger">Delete</a>
+                            {{-- <a href="{{ url('edit-category/'.$item-> id) }}" class="btn btn-primary">Edit</a> --}}
+                            <a href="{{ route('edit.category',$item->id) }}" class="btn btn-primary">Edit</a>
+                            {{-- <a href="{{ url('delete-category/'.$item-> id) }}"  class="btn btn-danger">Delete</a> --}}
+                            <a href="{{ route('delete.category',$item->id) }}"  class="btn btn-danger">Delete</a>
                            </td>
                     </tr>
                     @endforeach

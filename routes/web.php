@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\FrontendController as AdminFrontendController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontendController;
@@ -50,23 +51,23 @@ Route::middleware(['auth'])->group(function () {
     Route::get('view_order/{id}', [FrontendController::class, 'view_order']);
 });
 
-Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/dashboard','Admin\FrontendController@index')->name('dashboard');
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/dashboard',[AdminFrontendController::class, 'index'])->name('dashboard');
 
-    Route::get('categories', 'Admin\CategoryController@index');
-    Route::get('add-category', 'Admin\CategoryController@add');
+    Route::get('categories', [CategoryController::class, 'index'])->name('admin.categories');
+    Route::get('add-category', [CategoryController::class, 'add'])->name('add.category');
 
-    Route::post('insert-category', 'Admin\CategoryController@insert' );
-    Route::get('edit-category/{id}', [CategoryController::class, 'edit']);
-    Route::put('update-category/{id}', [CategoryController::class, 'update']);
-    Route::get('delete-category/{id}', [CategoryController::class, 'destroy']);
+    Route::post('insert-category', [CategoryController::class, 'insert'] )->name('new.category');
+    Route::get('edit-category/{id}', [CategoryController::class, 'edit'])->name('edit.category');
+    Route::put('update-category/{id}', [CategoryController::class, 'update'])->name('update.category');
+    Route::get('delete-category/{id}', [CategoryController::class, 'destroy'])->name('delete.category');
 
-    Route::get('products', [ProductController::class,'index' ]);
-    Route::get('add-products', [ProductController::class,'add' ]);
-    Route::post('insert-product', [ProductController::class, 'insert']);
+    Route::get('products', [ProductController::class,'index' ])->name('admin.products');
+    Route::get('add-products', [ProductController::class,'add' ])->name('add.product');
+    Route::post('insert-product', [ProductController::class, 'insert'])->name('new.product');
 
-    Route::get('edit-product/{id}', [ProductController::class, 'edit']);
-    Route::put('update-product/{id}', [ProductController::class, 'update']);
-    Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
+    Route::get('edit-product/{id}', [ProductController::class, 'edit'])->name('edit.product');
+    Route::put('update-product/{id}', [ProductController::class, 'update'])->name('update.product');
+    Route::get('delete-product/{id}', [ProductController::class, 'destroy'])->name('delete.product');
 });
 ?>

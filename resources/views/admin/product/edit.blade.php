@@ -5,7 +5,7 @@
         <h4>Add Product</h4>
      </div>
         <div class="card-body">
-            <form action=" {{ url('update-product/'.$product-> id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('update.product',$product->id) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="row">

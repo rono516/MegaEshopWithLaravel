@@ -16,37 +16,31 @@
           </a>
         </li>
         <li class="nav-item {{ Request::is('categories')? 'active':'' }}">
-          <a class="nav-link" href="{{url ('categories')}}">
+          <a class="nav-link" href="{{ route('admin.categories') }}">
             <p>Categories</p>
           </a>
         </li>
-        <li class="nav-item {{ Request::is('add-category')? 'active':'' }}">
+        {{-- <li class="nav-item {{ Request::is('add-category')? 'active':'' }}">
           <a class="nav-link" href="{{url ('add-category')}}">
             <p>Add Category</p>
           </a>
-        </li>
+        </li> --}}
         <li class="nav-item {{ Request::is('products')? 'active':'' }}">
-          <a class="nav-link" href="{{url ('products')}}">
+          <a class="nav-link" href="{{ route('admin.products') }}">
             <p>Products</p>
           </a>
         </li>
-        <li class="nav-item {{ Request::is('add-products')? 'active':'' }}">
+        {{-- <li class="nav-item {{ Request::is('add-products')? 'active':'' }}">
           <a class="nav-link" href="{{url ('add-products')}}">
             <p>Add Products</p>
           </a>
-        </li>
+        </li> --}}
 
-          <li class="nav-item {{ Request::is('manage_users')? 'active':'' }}">
+          {{-- <li class="nav-item {{ Request::is('manage_users')? 'active':'' }}">
               <a class="nav-link" href="{{url ('manage_users')}}">
                   <p>Manage Users</p>
               </a>
-          </li>
-{{--        <li class="nav-item ">--}}
-{{--          <a class="nav-link" href="./tables.html">--}}
-{{--            <i class="material-icons">content_paste</i>--}}
-{{--            <p>Table List</p>--}}
-{{--          </a>--}}
-{{--        </li>--}}
+          </li> --}}
 
       </ul>
     </div>

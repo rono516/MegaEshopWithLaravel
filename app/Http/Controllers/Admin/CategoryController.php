@@ -40,8 +40,8 @@ class CategoryController extends Controller
         $category->meta_decrip = $request->input('meta_description');
 
         $category->save();
-       // return redirect('/dashboard')->with('status',"Category Added Successfully");
-        return redirect()->back();
+       return redirect()->route('admin.categories')->with('status',"Category Added Successfully");
+        // return redirect()->back();
     }
     function edit($id){
         $category = Category::find($id);
@@ -71,7 +71,7 @@ class CategoryController extends Controller
         $category->meta_keywords = $request->input('meta_keywords');
         $category->meta_decrip = $request->input('meta_description');
         $category->update();
-        return redirect('dashboard')-> with('status',"Category Updated Successfully");
+        return redirect()->route('admin.categories')-> with('status',"Category Updated Successfully");
     }
     public function destroy($id)
     {
@@ -86,6 +86,6 @@ class CategoryController extends Controller
            }
        }
        $category-> delete();
-       return redirect('categories')-> with('status', "Category deleted successfully");
+       return redirect()->route('admin.categories')-> with('status', "Category deleted successfully");
     }
 }
