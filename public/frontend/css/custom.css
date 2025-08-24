@@ -1,13 +1,21 @@
-*{
+* {
     font-family: 'Roboto', sans-serif;
 }
-.checkout-form label{
+
+.checkout-form label {
     font-size: 12px;
     font-weight: 700;
 
 }
-.checkout-form input{
+
+.checkout-form input {
     font-size: 14px;
     padding: 5px;
     font-weight: 400;
+}
+.product-card{
+    box-shadow: 1px 11px 11px gray;
+}
+.product-card:hover{
+    box-shadow: 1px 11px 11px black;
 }
